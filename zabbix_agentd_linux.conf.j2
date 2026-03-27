@@ -1,0 +1,21 @@
+# Configuration de l'Agent Zabbix générée par Ansible
+
+# Adresse du serveur Zabbix (pour les vérifications passives)
+Server={{ zabbix_server_ip }}
+
+# Adresse du serveur Zabbix (pour les vérifications actives et l'auto-enregistrement)
+ServerActive={{ zabbix_server_ip }}
+
+# Nom de l'hôte tel qu'il apparaîtra dans l'interface Zabbix
+# Utilise le nom d'inventaire Ansible de la machine
+Hostname={{ inventory_hostname }}
+
+# Métadonnées pour l'auto-enregistrement (permet au serveur de classer l'hôte automatiquement)
+HostMetadata={{ agent_host_metadata }}
+
+# Emplacement du fichier de log
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=10
+
+# Inclusion des fichiers de configuration supplémentaires
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
