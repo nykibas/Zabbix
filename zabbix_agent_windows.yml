@@ -1,0 +1,65 @@
+---
+- name: Install Zabbix Agent on Windows
+  hosts: "{{target_host}}"
+  become: true
+  become_method: runas
+  become_user: netadmin
+  gather_facts: no
+  vars:
+    zabbix_agent_download_url: "https://cdn.zabbix.com/zabbix/binaries/stable/7.2/7.2.13/zabbix_agent2-7.2.13-windows-amd64-openssl.msi"
+    zabbix_installer_path: "C:\\temp\\zabbix_agent.msi"
+    zabbix_agent_conf_path: "C:\\Program Files\\Zabbix Agent 2\\zabbix_agent2.conf"
+    zabbix_server_ip: "192.168.1.12"
+
+  tasks:
+
+    - name: Ensure Temp directory exists
+      win_file:
+        path: C:\temp
+        state: directory
+
+    - name: Download Zabbix Agent Installer
+      win_get_url:
+        url: "{{ zabbix_agent_download_url }}"
+        dest: "{{ zabbix_installer_path }}"
+      register: download_result
+
+    - name: Install Zabbix Agent
+      win_package:
+        path: "{{ zabbix_installer_path }}"
+        state: present
+        arguments: >
+          /quiet
+          SERVER={{ zabbix_server_ip }}
+          SERVERACTIVE={{ zabbix_server_ip }}
+          HOSTNAME={{ inventory_hostname }}
+
+    - name: Configure Zabbix Agent for Auto-Registration
+      win_template:
+        src: zabbix_agentd.conf.j2
+        dest: "{{ zabbix_agent_conf_path }}"
+
+    - name: Ensure Zabbix Agent2 startup mode is automatic
+      win_service:
+      name: "Zabbix Agent 2"
+      start_mode: auto
+
+    - name: Stop Zabbix Agent2 service if running
+      win_service:
+      name: "Zabbix Agent 2"
+      state: stopped
+      ignore_errors: yes
+
+    - name: Start Zabbix Agent2 service with retries
+      win_service:
+      name: "Zabbix Agent 2"
+      state: started
+      register: zbx_service_start
+      retries: 5
+      delay: 3
+      until: zbx_service_start.state == "started"
+
+    - name: Cleanup Installer
+      win_file:
+        path: "{{ zabbix_installer_path }}"
+        state: absent
