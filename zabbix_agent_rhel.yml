@@ -4,7 +4,7 @@
   become: true
   vars:
     # IP de votre serveur Zabbix central
-    zabbix_server_ip: "192.168.1.5"
+    zabbix_server_ip: "192.168.200.130"
     
     # URL du dépôt RPM pour RHEL/Alma 10 (version 7.4 noarch)
     zabbix_repo_rpm_url: "https://repo.zabbix.com/zabbix/7.4/release/alma/10/noarch/zabbix-release-latest-7.4.el10.noarch.rpm"
@@ -17,7 +17,7 @@
       dnf:
         name: "{{ zabbix_repo_rpm_url }}"
         state: present
-        disable_gpg_check: no
+        disable_gpg_check: yes
 
     - name: Nettoyer le cache DNF
       dnf:
@@ -30,7 +30,7 @@
 
     - name: Configurer l'agent Zabbix via le template
       template:
-        src: templates/zabbix_agentd.conf.j2
+        src: /home/aap/aap/controller/data/projects/playbook/zabbix_agentd.conf.j2
         dest: /etc/zabbix/zabbix_agentd.conf
         owner: root
         group: root
