@@ -1,6 +1,6 @@
 ---
 - name: Installation automatisée de l'agent Zabbix sur RHEL 10
-  hosts: "{{ target_hosts }}"
+ ######## hosts: "{{ target_hosts }}"
   become: true
   vars:
     # IP de votre serveur Zabbix central
