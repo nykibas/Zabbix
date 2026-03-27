@@ -1,0 +1,50 @@
+---
+- name: Installation automatisée de l'agent Zabbix sur RHEL 10
+  hosts: "{{ target_hosts }}"
+  become: true
+  vars:
+    # IP de votre serveur Zabbix central
+    zabbix_server_ip: "192.168.1.5"
+    
+    # URL du dépôt RPM pour RHEL/Alma 10 (version 7.4 noarch)
+    zabbix_repo_rpm_url: "https://repo.zabbix.com/zabbix/7.4/release/alma/10/noarch/zabbix-release-latest-7.4.el10.noarch.rpm"
+    
+    # Metadata pour l'auto-enregistrement sur le serveur Zabbix
+    agent_host_metadata: "Linux"
+
+  tasks:
+    - name: Installer le dépôt Zabbix (RPM)
+      dnf:
+        name: "{{ zabbix_repo_rpm_url }}"
+        state: present
+        disable_gpg_check: no
+
+    - name: Nettoyer le cache DNF
+      dnf:
+        clean: all
+
+    - name: Installer l'agent Zabbix
+      dnf:
+        name: zabbix-agent
+        state: present
+
+    - name: Configurer l'agent Zabbix via le template
+      template:
+        src: templates/zabbix_agentd.conf.j2
+        dest: /etc/zabbix/zabbix_agentd.conf
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Restart Zabbix Agent
+
+    - name: S'assurer que l'agent Zabbix est démarré et activé
+      service:
+        name: zabbix-agent
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart Zabbix Agent
+      service:
+        name: zabbix-agent
+        state: restarted
