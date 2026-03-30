@@ -20,14 +20,17 @@
         state: present
         disable_gpg_check: yes
 
-    - name: Nettoyer le cache DNF
+    - name: Forcer la mise à jour du cache
       dnf:
-        clean: all
-
+        update_cache: yes
+      
     - name: Installer l'agent Zabbix
       dnf:
         name: zabbix-agent
         state: present
+      environment:
+        http_proxy: http://host.containers.internal:1080
+        https_proxy: http://host.containers.internal:1080
 
     - name: Configurer l'agent Zabbix via le template
       template:
