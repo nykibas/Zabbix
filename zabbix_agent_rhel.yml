@@ -7,7 +7,8 @@
     zabbix_server_ip: "192.168.200.130"
     
     # URL du dépôt RPM pour RHEL/Alma 10 (version 7.4 noarch)
-    zabbix_repo_rpm_url: "https://repo.zabbix.com/zabbix/7.4/release/alma/10/noarch/zabbix-release-latest-7.4.el10.noarch.rpm"
+    #####zabbix_repo_rpm_url: "https://repo.zabbix.com/zabbix/7.4/release/alma/10/noarch/zabbix-release-latest-7.4.el10.noarch.rpm"
+    zabbix_repo_rpm_url: "/home/aap/zabbix-release-latest-7.4.el10.noarch.rpm"
     
     # Metadata pour l'auto-enregistrement sur le serveur Zabbix
     agent_host_metadata: "Linux"
