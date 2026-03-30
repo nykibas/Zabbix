@@ -48,6 +48,14 @@
         mode: '0644'
       notify: Restart Zabbix Agent
 
+    - name: Créer le répertoire pour le fichier PID
+      file:
+        path: /run/zabbix
+        state: directory
+        owner: zabbix
+        group: zabbix
+        mode: '0755'
+
     - name: S'assurer que l'agent Zabbix est démarré et activé
       service:
         name: zabbix-agent
