@@ -1,6 +1,6 @@
 ---
-- name: Installation automatisée de l'agent Zabbix sur RHEL 10
-  hosts: ansible-ap
+- name: Installation automatisée de l'agent Zabbix sur RHEL 
+  hosts: all
   become: true
   vars:
     # IP de votre serveur Zabbix central
