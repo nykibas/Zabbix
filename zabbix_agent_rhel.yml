@@ -19,7 +19,10 @@
         name: "{{ zabbix_repo_rpm_url }}"
         state: present
         disable_gpg_check: yes
-
+      environment:
+        http_proxy: http://host.containers.internal:1080
+        https_proxy: http://host.containers.internal:1080
+        
     - name: Forcer la mise à jour du cache
       dnf:
         update_cache: yes
