@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Styles>
+  <Style ss:ID="Header">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#1F4E78" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="PCI_Impact">
+   <Alignment ss:Horizontal="Center"/>
+   <Font ss:FontName="Calibri" ss:Color="#9C0006" ss:Bold="1"/>
+   <Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="Standard">
+   <Font ss:FontName="Calibri" ss:Size="11"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Registre_ITIL_PCIDSS">
+  <Table>
+   <Column ss:Width="80"/> <Column ss:Width="100"/> <Column ss:Width="150"/> <Column ss:Width="200"/> <Column ss:Width="100"/> <Column ss:Width="120"/> <Column ss:Width="150"/> <Row ss:Height="25">
+    <Cell ss:StyleID="Header"><Data ss:Type="String">ID Changement</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Date Demande</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Type (ITIL)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Description Technique</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Périmètre PCI DSS</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Approbation CAB/RSSI</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Plan de Rollback</Data></Cell>
+   </Row>
+   
+   <Row>
+    <Cell ss:StyleID="Standard"><Data ss:Type="String">CHG-2026-001</Data></Cell>
+    <Cell ss:StyleID="Standard"><Data ss:Type="String">07/04/2026</Data></Cell>
+    <Cell ss:StyleID="Standard"><Data ss:Type="String">Normal</Data></Cell>
+    <Cell ss:StyleID="Standard"><Data ss:Type="String">Mise à jour Firewall Core</Data></Cell>
+    <Cell ss:StyleID="PCI_Impact"><Data ss:Type="String">OUI (CDE)</Data></Cell>
+    <Cell ss:StyleID="Standard"><Data ss:Type="String">En attente RSSI</Data></Cell>
+    <Cell ss:StyleID="Standard"><Data ss:Type="String">Restauration backup config</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>
