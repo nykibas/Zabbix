@@ -6,82 +6,67 @@
  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
  xmlns:html="http://www.w3.org/TR/REC-html40">
  <Styles>
-  <Style ss:ID="HeaderTitle">
+  <Style ss:ID="Title">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
-   <Font ss:FontName="Segoe UI" ss:Size="16" ss:Color="#FFFFFF" ss:Bold="1"/>
-   <Interior ss:Color="#1E7E34" ss:Pattern="Solid"/> </Style>
-  <Style ss:ID="SectionHeader">
+   <Font ss:FontName="Arial" ss:Size="14" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#C00000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="Section">
    <Alignment ss:Vertical="Center"/>
-   <Font ss:FontName="Segoe UI" ss:Size="12" ss:Color="#FFFFFF" ss:Bold="1"/>
-   <Interior ss:Color="#343a40" ss:Pattern="Solid"/> </Style>
+   <Font ss:FontName="Arial" ss:Size="10" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#333333" ss:Pattern="Solid"/>
+  </Style>
   <Style ss:ID="Label">
-   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
-   <Font ss:FontName="Segoe UI" ss:Bold="1" ss:Color="#343a40"/>
+   <Alignment ss:Horizontal="Right" ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9" ss:Bold="1" ss:Color="#333333"/>
   </Style>
-  <Style ss:ID="InputBox">
+  <Style ss:ID="InputDropdown">
    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9" ss:Color="#0000FF" ss:Italic="1"/>
    <Borders>
-    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#28a745"/>
-    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#28a745"/>
-    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#28a745"/>
-    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#28a745"/>
+    <Border ss:Position="All" ss:LineStyle="Continuous" ss:Weight="1"/>
    </Borders>
+   <Interior ss:Color="#FFFFE1" ss:Pattern="Solid"/> </Style>
+  <Style ss:ID="PCI_Zone">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9" ss:Color="#C00000" ss:Bold="1"/>
+   <Interior ss:Color="#FDE9E9" ss:Pattern="Solid"/>
   </Style>
-  <Style ss:ID="PCICritical">
-   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
-   <Font ss:FontName="Segoe UI" ss:Color="#FFFFFF" ss:Bold="1"/>
-   <Interior ss:Color="#dc3545" ss:Pattern="Solid"/> </Style>
  </Styles>
- <Worksheet ss:Name="Formulaire_Solidaire_Banque">
-  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="30" ss:DefaultColumnWidth="60">
-   <Column ss:Width="20"/>
-   <Column ss:Width="200"/> 
-   <Column ss:Width="300"/> 
+
+ <Worksheet ss:Name="Change_Request_SB">
+  <Table ss:ExpandedColumnCount="4" ss:DefaultColumnWidth="60">
+   <Column ss:Width="30"/>
+   <Column ss:Width="220"/>
+   <Column ss:Width="400"/>
+
+   <Row ss:Height="35">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Title"><Data ss:Type="String">SOLIDAIRE BANQUE - FORMULAIRE DE CHANGEMENT</Data></Cell>
+   </Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 1. IDENTIFICATION ET CLASSIFICATION</Data></Cell></Row>
    
-   <Row ss:Height="40">
-    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="HeaderTitle"><Data ss:Type="String">SOLIDAIRE BANQUE - DEMANDE DE CHANGEMENT IT</Data></Cell>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Type de Changement :</Data></Cell>
+    <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : Standard / Normal / Urgent --</Data></Cell>
    </Row>
    
-   <Row ss:Height="15"/>
-
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Priorité :</Data></Cell>
+    <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : Basse / Moyenne / Haute / Critique --</Data></Cell>
+   </Row>
+   
    <Row ss:Height="25">
-    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String">  IDENTIFICATION DU CHANGEMENT</Data></Cell>
-   </Row>
-   <Row ss:Height="22">
-    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Référence (Auto) :</Data></Cell>
-    <Cell ss:StyleID="InputBox"><Data ss:Type="String">SB-CR-2026-XXXX</Data></Cell>
-   </Row>
-   <Row ss:Height="22">
-    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Propriétaire du Système :</Data></Cell>
-    <Cell ss:StyleID="InputBox"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Impact sur le CDE (PCI DSS) :</Data></Cell>
+    <Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
 
-   <Row ss:Height="15"/>
-
-   <Row ss:Height="25">
-    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String">  CONFORMITÉ &amp; SÉCURITÉ (PCI DSS)</Data></Cell>
-   </Row>
-   <Row ss:Height="25">
-    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Impact Périmètre Monétique :</Data></Cell>
-    <Cell ss:StyleID="PCICritical"><Data ss:Type="String">OUI / NON</Data></Cell>
-   </Row>
-   <Row ss:Height="22">
-    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Validation Tests Sécurité :</Data></Cell>
-    <Cell ss:StyleID="InputBox"><Data ss:Type="String">Joint au dossier</Data></Cell>
-   </Row>
-
-   <Row ss:Height="15"/>
-
-   <Row ss:Height="25">
-    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String">  PLAN TECHNIQUE (ITIL V5)</Data></Cell>
-   </Row>
-   <Row ss:Height="50">
-    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Objectif du Changement :</Data></Cell>
-    <Cell ss:StyleID="InputBox"><Data ss:Type="String"></Data></Cell>
-   </Row>
-   <Row ss:Height="60">
-    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Plan de Rollback (CRITIQUE) :</Data></Cell>
-    <Cell ss:StyleID="InputBox"><Data ss:Type="String">Procédure de retour arrière immédiat...</Data></Cell>
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 3. VOLET SÉCURITÉ ET CONFORMITÉ</Data></Cell></Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Séparation des tâches validée :</Data></Cell>
+    <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
   </Table>
  </Worksheet>
