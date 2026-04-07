@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="HeaderTitle">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Size="16" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#1F4E78" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="SectionHeader">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Size="12" ss:Color="#1F4E78" ss:Bold="1"/>
+   <Interior ss:Color="#D9E1F2" ss:Pattern="Solid"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="Label">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="InputBox">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="PCIWarning">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Color="#9C0006" ss:Bold="1"/>
+   <Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Formulaire_de_Changement">
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="25" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="60">
+   <Column ss:AutoFitWidth="0" ss:Width="20"/>
+   <Column ss:AutoFitWidth="0" ss:Width="180"/> <Column ss:AutoFitWidth="0" ss:Width="250"/> <Column ss:AutoFitWidth="0" ss:Width="100"/>
+   
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="HeaderTitle"><Data ss:Type="String">DEMANDE DE CHANGEMENT IT (CR)</Data></Cell>
+   </Row>
+   
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String"> 1. Identification du Demandeur</Data></Cell>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Nom du Demandeur :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">[Saisir Nom]</Data></Cell>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Département / Service :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">Informatique / Infrastructure</Data></Cell>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Type de Changement (ITIL) :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">Normal / Standard / Urgent</Data></Cell>
+   </Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String"> 2. Évaluation Sécurité &amp; PCI DSS</Data></Cell>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Impact sur Périmètre PCI (CDE) :</Data></Cell>
+    <Cell ss:StyleID="PCIWarning"><Data ss:Type="String">OUI / NON</Data></Cell>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Séparation des Tâches validée :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">OUI (Le déployeur est différent du dev)</Data></Cell>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Scan de Vulnérabilité joint :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">OUI / NON / N/A</Data></Cell>
+   </Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String"> 3. Détails Techniques</Data></Cell>
+   </Row>
+   <Row ss:Height="40">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Description de la modification :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="60">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Plan de Mise en Oeuvre :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">Étape 1: ... &#10;Étape 2: ...</Data></Cell>
+   </Row>
+   <Row ss:Height="40">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Plan de Rollback (Retour AR) :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String">Obligatoire pour audit</Data></Cell>
+   </Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="SectionHeader"><Data ss:Type="String"> 4. Gouvernance (Signatures)</Data></Cell>
+   </Row>
+   <Row ss:Height="30">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation RSSI (Si PCI) :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="30">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Décision du CAB :</Data></Cell>
+    <Cell ss:StyleID="InputBox"><Data ss:Type="String"></Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>
