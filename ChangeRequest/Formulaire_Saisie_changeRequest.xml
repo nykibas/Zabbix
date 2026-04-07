@@ -5,6 +5,7 @@
  xmlns:x="urn:schemas-microsoft-com:office:excel"
  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
  xmlns:html="http://www.w3.org/TR/REC-html40">
+
  <Styles>
   <Style ss:ID="Title">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
@@ -37,17 +38,12 @@
  <Worksheet ss:Name="Change_Request_SB">
   <Table ss:ExpandedColumnCount="4" ss:DefaultColumnWidth="60">
    <Column ss:Width="30"/>
-   <Column ss:Width="220"/>
-   <Column ss:Width="400"/>
-
-   <Row ss:Height="35">
-    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Title"><Data ss:Type="String">SOLIDAIRE BANQUE - FORMULAIRE DE CHANGEMENT</Data></Cell>
+   <Column ss:Width="220"/> <Column ss:Width="400"/> <Row ss:Height="35">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Title"><Data ss:Type="String">SOLIDAIRE BANQUE - FORMULAIRE DE CHANGEMENT (ITIL &amp; PCI DSS)</Data></Cell>
    </Row>
 
    <Row ss:Height="10"/>
-
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 1. IDENTIFICATION ET CLASSIFICATION</Data></Cell></Row>
-   
    <Row>
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Type de Changement :</Data></Cell>
     <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : Standard / Normal / Urgent --</Data></Cell>
@@ -63,11 +59,55 @@
     <Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
 
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 2. DESCRIPTION ET ANALYSE D'IMPACT</Data></Cell></Row>
+   <Row ss:Height="40"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Description détaillée (Objectif) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="30"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Systèmes impactés (SRV/DB/Réseau) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="30"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Analyse de Risque (Si échec) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+
+   <Row ss:Height="10"/>
+
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 3. VOLET SÉCURITÉ ET CONFORMITÉ</Data></Cell></Row>
    <Row>
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Séparation des tâches validée :</Data></Cell>
     <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
+  </Table>
+ </Worksheet>
+</Workbook>
+ 
+
+<!--    <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 1. IDENTIFICATION ET CLASSIFICATION</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">ID du Changement :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String">CHG-2026-XXXX</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Demandeur (Nom &amp; Dpt) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Type (Standard/Normal/Urgent) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Priorité (Basse à Critique) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="25"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Périmètre PCI DSS (Impact CDE ?) :</Data></Cell><Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">[ ] OUI  /  [ ] NON</Data></Cell></Row>
+ -->
+
+
+<!--    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 3. VOLET SÉCURITÉ ET CONFORMITÉ</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Lien Rapport de Scan Vulnérabilité :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Séparation des tâches validée :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String">[ ] OUI (Le déployeur est différent du dev)</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Impact Segmentation / Firewall :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row> -->
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 4. PLAN D'EXÉCUTION ET RETOUR ARRIÈRE</Data></Cell></Row>
+   <Row ss:Height="50"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Étapes de mise en oeuvre :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="50"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">PLAN DE ROLLBACK (DÉTAILLÉ) :</Data></Cell><Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">Obligatoire pour conformité bancaire.</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Tests de validation post-déploiement :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 5. WORKFLOW D'APPROBATION</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation Technique (Peer Review) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation Sécurité (RSSI) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Décision finale CAB / Change Mgr :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
   </Table>
  </Worksheet>
 </Workbook>
