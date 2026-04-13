@@ -12,31 +12,61 @@
    <Font ss:FontName="Arial" ss:Size="14" ss:Color="#FFFFFF" ss:Bold="1"/>
    <Interior ss:Color="#C00000" ss:Pattern="Solid"/>
   </Style>
+  
   <Style ss:ID="Section">
    <Alignment ss:Vertical="Center"/>
    <Font ss:FontName="Arial" ss:Size="10" ss:Color="#FFFFFF" ss:Bold="1"/>
    <Interior ss:Color="#333333" ss:Pattern="Solid"/>
   </Style>
+  
   <Style ss:ID="Label">
    <Alignment ss:Horizontal="Right" ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Arial" ss:Size="9" ss:Bold="1" ss:Color="#333333"/>
   </Style>
+
+  <Style ss:ID="Input">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+
   <Style ss:ID="InputDropdown">
    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Arial" ss:Size="9" ss:Color="#0000FF" ss:Italic="1"/>
    <Interior ss:Color="#FFFFE1" ss:Pattern="Solid"/> 
-   </Style>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+
   <Style ss:ID="PCI_Zone">
    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Arial" ss:Size="9" ss:Color="#C00000" ss:Bold="1"/>
    <Interior ss:Color="#FDE9E9" ss:Pattern="Solid"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
   </Style>
  </Styles>
 
  <Worksheet ss:Name="Change_Request_SB">
   <Table ss:ExpandedColumnCount="4" ss:DefaultColumnWidth="60">
    <Column ss:Width="30"/>
-   <Column ss:Width="220"/> <Column ss:Width="400"/> <Row ss:Height="35">
+   <Column ss:Width="220"/> 
+   <Column ss:Width="400"/> 
+
+   <Row ss:Height="35">
     <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Title"><Data ss:Type="String">SOLIDAIRE BANQUE - FORMULAIRE DE CHANGEMENT (ITIL &amp; PCI DSS)</Data></Cell>
    </Row>
 
@@ -46,46 +76,54 @@
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Type de Changement :</Data></Cell>
     <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : Standard / Normal / Urgent --</Data></Cell>
    </Row>
-   
    <Row>
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Priorité :</Data></Cell>
     <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : Basse / Moyenne / Haute / Critique --</Data></Cell>
    </Row>
-   
    <Row ss:Height="25">
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Impact sur le CDE (PCI DSS) :</Data></Cell>
     <Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
 
-
    <Row ss:Height="10"/>
-
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 2. DESCRIPTION ET ANALYSE D'IMPACT</Data></Cell></Row>
-   <Row ss:Height="40"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Description détaillée (Objectif) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
-   <Row ss:Height="30"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Systèmes impactés (SRV/DB/Réseau) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
-   <Row ss:Height="30"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Analyse de Risque (Si échec) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="40">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Description détaillée :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="30">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Systèmes impactés :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
 
    <Row ss:Height="10"/>
-
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 3. VOLET SÉCURITÉ ET CONFORMITÉ</Data></Cell></Row>
    <Row>
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Séparation des tâches validée :</Data></Cell>
     <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
-   <Row ss:Height="10"/>
 
+   <Row ss:Height="10"/>
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 4. PLAN D'EXÉCUTION ET RETOUR ARRIÈRE</Data></Cell></Row>
-   <Row ss:Height="50"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Étapes de mise en oeuvre :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
-   <Row ss:Height="50"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">PLAN DE ROLLBACK (DÉTAILLÉ) :</Data></Cell><Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">Obligatoire pour conformité bancaire.</Data></Cell></Row>
-   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Tests de validation post-déploiement :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="50">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Étapes de mise en oeuvre :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="50">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">PLAN DE ROLLBACK (DÉTAILLÉ) :</Data></Cell>
+    <Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">Procédure impérative de retour arrière.</Data></Cell>
+   </Row>
 
    <Row ss:Height="10"/>
-
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 5. WORKFLOW D'APPROBATION</Data></Cell></Row>
-   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation Technique (Peer Review) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
-   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation Sécurité (RSSI) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
-   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Décision finale CAB / Change Mgr :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation Technique :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Approbation RSSI :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
   </Table>
  </Worksheet>
 </Workbook>
- 

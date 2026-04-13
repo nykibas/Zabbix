@@ -21,22 +21,41 @@
    <Alignment ss:Horizontal="Right" ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Arial" ss:Size="9" ss:Bold="1" ss:Color="#333333"/>
   </Style>
+  <Style ss:ID="Input">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
   <Style ss:ID="InputDropdown">
    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Arial" ss:Size="9" ss:Color="#0000FF" ss:Italic="1"/>
    <Interior ss:Color="#FFFFE1" ss:Pattern="Solid"/> 
-   </Style>
+   <Borders>
+    <Border ss:Position="All" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
   <Style ss:ID="PCI_Zone">
    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
    <Font ss:FontName="Arial" ss:Size="9" ss:Color="#C00000" ss:Bold="1"/>
    <Interior ss:Color="#FDE9E9" ss:Pattern="Solid"/>
+   <Borders>
+    <Border ss:Position="All" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
   </Style>
  </Styles>
 
  <Worksheet ss:Name="Change_Request_SB">
   <Table ss:ExpandedColumnCount="4" ss:DefaultColumnWidth="60">
    <Column ss:Width="30"/>
-   <Column ss:Width="220"/> <Column ss:Width="400"/> <Row ss:Height="35">
+   <Column ss:Width="220"/> 
+   <Column ss:Width="400"/> 
+
+   <Row ss:Height="35">
     <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Title"><Data ss:Type="String">SOLIDAIRE BANQUE - FORMULAIRE DE CHANGEMENT (ITIL &amp; PCI DSS)</Data></Cell>
    </Row>
 
@@ -57,7 +76,6 @@
     <Cell ss:StyleID="PCI_Zone"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
 
-
    <Row ss:Height="10"/>
 
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 2. DESCRIPTION ET ANALYSE D'IMPACT</Data></Cell></Row>
@@ -72,6 +90,7 @@
     <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Séparation des tâches validée :</Data></Cell>
     <Cell ss:StyleID="InputDropdown"><Data ss:Type="String">-- Choisir : OUI / NON --</Data></Cell>
    </Row>
+   
    <Row ss:Height="10"/>
 
    <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 4. PLAN D'EXÉCUTION ET RETOUR ARRIÈRE</Data></Cell></Row>
@@ -88,4 +107,3 @@
   </Table>
  </Worksheet>
 </Workbook>
- 

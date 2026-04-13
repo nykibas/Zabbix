@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+
+ <Styles>
+  <Style ss:ID="Title">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Arial" ss:Size="14" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#C00000" ss:Pattern="Solid"/>
+  </Style>
+  
+  <Style ss:ID="Section">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="Arial" ss:Size="10" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#333333" ss:Pattern="Solid"/>
+  </Style>
+  
+  <Style ss:ID="Label">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9" ss:Bold="1" ss:Color="#333333"/>
+  </Style>
+
+  <Style ss:ID="Input">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+
+  <Style ss:ID="InputAutoID">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="Arial" ss:Size="9" ss:Color="#333333" ss:Bold="1"/>
+   <Interior ss:Color="#EAEAEA" ss:Pattern="Solid"/>
+  </Style>
+
+  <Style ss:ID="RollbackStyle">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial" ss:Size="9" ss:Color="#C00000" ss:Bold="1"/>
+   <Interior ss:Color="#FDE9E9" ss:Pattern="Solid"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+ </Styles>
+
+ <Worksheet ss:Name="Change_Request_SB">
+  <Table ss:ExpandedColumnCount="3" ss:DefaultColumnWidth="60">
+   <Column ss:Width="30"/>
+   <Column ss:Width="230"/> 
+   <Column ss:Width="400"/> 
+
+   <Row ss:Height="35">
+    <Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Title"><Data ss:Type="String">SOLIDAIRE BANQUE - FORMULAIRE DE CHANGEMENT COMPLET</Data></Cell>
+   </Row>
+
+   <Row ss:Height="22">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">ID DU CHANGEMENT (AUTO) :</Data></Cell>
+    <Cell ss:StyleID="InputAutoID" ss:Formula="=&quot;SB-CR-&quot;&amp;TEXT(TODAY(),&quot;YYYYMM&quot;)&amp;&quot;-&quot;&amp;TEXT(ROW(),&quot;000&quot;)">
+     <Data ss:Type="String">Généré à l'ouverture</Data>
+    </Cell>
+   </Row>
+
+   <Row ss:Height="10"/>
+   
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 1. IDENTIFICATION DES ACTEURS</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Demandeur (Requestor) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String">YANNICK NZAU</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Rôle du Demandeur :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String">DBA Senior / SysAdmin</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Implémenteur (Implementer) :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String">BRAVO KWAMBO</Data></Cell></Row>
+   <Row><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Rôle de l'Implémenteur :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 2. JUSTIFICATION (WHY / WHAT IF NOT)</Data></Cell></Row>
+   <Row ss:Height="40">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Justification (Why?) :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="40">
+    <Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Risque d'inaction (What if not?) :</Data></Cell>
+    <Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell>
+   </Row>
+
+   <Row ss:Height="10"/>
+
+   <Row ss:Height="20"><Cell ss:Index="2" ss:MergeAcross="1" ss:StyleID="Section"><Data ss:Type="String"> 3. TECHNIQUE ET RETOUR ARRIERE</Data></Cell></Row>
+   <Row ss:Height="50"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">Plan de mise en oeuvre :</Data></Cell><Cell ss:StyleID="Input"><Data ss:Type="String"></Data></Cell></Row>
+   <Row ss:Height="50"><Cell ss:Index="2" ss:StyleID="Label"><Data ss:Type="String">PLAN DE ROLLBACK :</Data></Cell><Cell ss:StyleID="RollbackStyle"><Data ss:Type="String"></Data></Cell></Row>
+  </Table>
+ </Worksheet>
+</Workbook>
